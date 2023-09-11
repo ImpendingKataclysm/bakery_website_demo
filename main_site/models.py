@@ -41,7 +41,7 @@ class Applicant(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=10, null=True, blank=True)
     date_available = models.DateField()
-    resume = models.FileField(upload_to=f'resumes/{last_name}_{first_name}.pdf')
+    resume = models.FileField(upload_to='resumes')
     date_applied = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

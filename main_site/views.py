@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
-from . import models
+from django.contrib import messages
+from . import models, forms
 
 
 class HomePage(generic.TemplateView):
@@ -31,8 +32,28 @@ class ProductPage(generic.ListView):
         return context
 
 
-class JobApplicationPage(generic.TemplateView):
+class JobApplicationPage(generic.FormView):
+    form_class = forms.ApplicantForm
     template_name = 'main/jobs.html'
+    success_url = '/'
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.render_to_response(self.get_context_data(form=form))
+
+    def form_valid(self, form):
+        success_message = 'Thank you for your application!'
+        applicant = form.save(commit=False)
+
+        applicant.save()
+        messages.success(self.request, message=success_message)
+
+        return super().form_valid(form)
 
 
 class ContactPage(generic.TemplateView):

@@ -4,5 +4,30 @@
 {% block title %}Jobs{% endblock %}
 
 {% block content %}
-    <p>Jobs page coming soon...</p>
+    <form id="applicantForm" method="POST" action="{% url 'main_site:jobs' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="first_name">First Name</label>
+        {{ form.first_name }}
+
+        <label for="last_name">Last Name</label>
+        {{ form.last_name }}
+
+        <label for="email">Email Address</label>
+        {{ form.email }}
+
+        <label for="phone">Phone Number</label>
+        {{ form.phone }}
+
+        <label for="date_available">Date Available</label>
+        {{ form.date_available }}
+
+        <label for="resume">Upload Your Resume</label>
+        {{ form.resume }}
+
+        <input type="submit" value="Apply Now" class="submit-btn" />
+    </form>
+
+    {% if form.errors %}
+        {{ form.errors }}
+    {% endif %}
 {% endblock %}
