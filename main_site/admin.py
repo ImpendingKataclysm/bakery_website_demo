@@ -10,3 +10,8 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(models.Applicant)
 class ApplicantAdmin(admin.ModelAdmin):
     list_display = ('id', 'last_name', 'first_name')
+
+
+@admin.register(models.ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'timestamp')
