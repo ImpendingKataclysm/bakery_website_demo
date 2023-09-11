@@ -5,8 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}" />
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <div class="main_wrap">
+        <header>
+            <div class="main_header">
+                <div>
+                    <a href="{% url 'main_site:home' %}">
+                        <img src="{% static 'main/images/logo.png' %}" alt="bakery logo" />
+                    </a>
+                </div>
+                <div>
+                    <h1>Best Bakery</h1>
+                    <p class="subtitle">Est. 19XX</p>
+                </div>
+                <div id="nav-btn" class="nav_btn" tabindex="0">
+                    <img src="{% static 'main/images/nav_icon.png' %}" alt="nav menu icon" />
+                </div>
+            </div>
+            <nav class="main_nav" id="main_nav">
+                <ul>
+                    <li><a href="{% url 'main_site:home' %}">Home</a></li>
+                    <li><a href="{% url 'main_site:about' %}">About</a></li>
+                    <li><a href="{% url 'main_site:products' %}">Products</a></li>
+                    <li><a href="{% url 'main_site:jobs' %}">Careers</a></li>
+                    <li><a href="{% url 'main_site:contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <section>
+                <ul class="styled_list site_map">
+                    <li><a href="{% url 'main_site:home' %}">Home</a></li>
+                    <li><a href="{% url 'main_site:about' %}">About</a></li>
+                    <li><a href="{% url 'main_site:products' %}">Products</a></li>
+                    <li><a href="{% url 'main_site:jobs' %}">Careers</a></li>
+                    <li><a href="{% url 'main_site:contact' %}">Contact</a></li>
+                </ul>
+            </section>
+            <address>
+                123 Fake St.
+                <br/>
+                City, Province VVV 555
+                <br/>
+                (555) 555-5555
+                <br/>
+                citybakery@example.com
+            </address>
+            <div class="icon_credit">
+               <a target="_blank" href="https://icons8.com/icon/82749/menu">Menu</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'main/js/script.js' %}"></script>
 </body>
 </html>
