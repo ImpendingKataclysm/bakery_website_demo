@@ -51,5 +51,20 @@ class JobApplicationPage(generic.FormView):
         return super().form_valid(form)
 
 
-class ContactPage(generic.TemplateView):
+class ContactPage(generic.FormView):
+    """
+    Display the contact page with the contact form. When a message is received
+    and successfully validated, it is stored in the Contact Messages table in
+    the database and the user is redirected to the home page with a success
+    message.
+    """
+    form_class = forms.ContactForm
     template_name = 'main/contact.html'
+    success_url = '/'
+
+    def form_valid(self, form):
+        success_message = 'Thanks for reaching out!'
+        form.save()
+        messages.success(self.request, success_message)
+
+        return super().form_valid(form)

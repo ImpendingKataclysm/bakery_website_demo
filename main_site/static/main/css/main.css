@@ -195,6 +195,12 @@ figure {
     width: 100%;
 }
 
+.map_wrap {
+    padding: 0.5rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
 /* Links */
 
 .text_link {
@@ -362,6 +368,19 @@ input:focus {
     .product figure {
         width: 50%;
     }
+
+    .comments {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .comments.card {
+        width: 90%;
+    }
+
+    .comments form {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 1020px) {
@@ -390,6 +409,12 @@ input:focus {
 
     .display-img {
         max-width: 90%;
+    }
+
+    .map_wrap iframe {
+        display: block;
+        width: 100%;
+        min-width: 20rem;
     }
 
     .wrapper.home_wrap {
@@ -477,5 +502,15 @@ input:focus {
     .job_form form {
         width: 80%;
         margin: auto;
+    }
+
+    .contact_grid {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        padding: 0.5rem;
+    }
+
+    .contact_grid h3 {
+        text-align: left;
     }
 }
