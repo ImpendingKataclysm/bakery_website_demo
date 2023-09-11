@@ -30,3 +30,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Applicant(models.Model):
+    """
+    Database model for online job applications
+    """
+    first_name = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
+    last_name = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
+    email = models.EmailField()
+    date_available = models.DateField()
+    resume = models.FileField(upload_to=f'resumes/{last_name}_{first_name}.pdf')
+    date_applied = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.last_name}, {self.first_name}'
+
