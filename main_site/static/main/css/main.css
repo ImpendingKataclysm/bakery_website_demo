@@ -1,7 +1,7 @@
 :root {
     --shadow: #391e01;
-    --primaryAccent: rgb(242, 134, 167);
-    --secondaryAccent: #84172C;
+    --primaryAccent: rgb(208, 67, 111);
+    --secondaryAccent: #9a173f;
     --bgLight: #D47186;
 }
 
@@ -229,6 +229,63 @@ footer a:hover, footer a:focus {
     color: #fff;
 }
 
+/* Forms */
+
+form {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+label {
+    line-height: 1.5;
+    margin-right: 0.5rem;
+}
+
+input {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: 0.2rem 0.2rem 0.7rem var(--shadow);
+}
+
+input {
+    margin-bottom: 0.2rem;
+}
+
+input:focus {
+    outline: none;
+    border: 5px solid rgb(144, 145, 144);
+}
+
+.card {
+    border-radius: 1.2rem;
+    padding: 1rem;
+    background-image: linear-gradient(to bottom, var(--secondaryAccent), #D0436FFF);
+}
+
+.input_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem auto;
+    max-width: 75%;
+}
+
+.input_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+.submit-btn {
+    padding: 1rem;
+    border-radius: 1.2rem;
+    background-color: var(--bgLight);
+    color: #fff;
+    box-shadow: inset -5px -5px 7px var(--secondaryAccent),
+                inset 5px 5px 7px var(--primaryAccent);
+}
+
 /* Home Page */
 
 .seasonal_item {
@@ -285,6 +342,15 @@ footer a:hover, footer a:focus {
         display: none;
     }
 
+    .card {
+        width: 50%;
+        margin: 0.5rem auto;
+    }
+
+    .input_wrap {
+        margin: 0.3rem;
+    }
+
     .products {
         grid-template-columns: 1fr;
     }
@@ -320,6 +386,10 @@ footer a:hover, footer a:focus {
 
     address {
         text-align: right;
+    }
+
+    .display-img {
+        max-width: 90%;
     }
 
     .wrapper.home_wrap {
@@ -398,5 +468,14 @@ footer a:hover, footer a:focus {
     .product_grid {
         display: grid;
         grid-template-columns: 20% 1fr;
+    }
+
+    .job_form {
+        width: 40%;
+    }
+
+    .job_form form {
+        width: 80%;
+        margin: auto;
     }
 }
