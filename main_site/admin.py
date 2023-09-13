@@ -15,3 +15,8 @@ class ApplicantAdmin(admin.ModelAdmin):
 @admin.register(models.ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'timestamp')
+
+
+@admin.register(models.Location)
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ('id', 'city', 'province')

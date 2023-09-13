@@ -49,13 +49,15 @@
                 </ul>
             </section>
             <address>
-                123 Fake St.
+                {{ location.street_address }}
                 <br/>
-                City, Province VVV 555
+                {{ location.city }}, {{ location.province }}
+                <br />
+                {{ location.postal }}
                 <br/>
-                (555) 555-5555
+                {{ location.phone }}
                 <br/>
-                citybakery@example.com
+                {{ location.email }}
             </address>
             <div class="icon_credit">
                <a target="_blank" href="https://icons8.com/icon/82749/menu">Menu</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

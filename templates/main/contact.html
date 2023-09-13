@@ -12,17 +12,18 @@
             <h3>Location</h3>
             <ul class="styled_list">
                 <li class="contact_item">
-                    <strong>Address</strong>: 123 Fake St. City, Province
+                    <strong>Address</strong>: {{ location.street_address }} {{ location.city }}, {{ location.province }}
                 </li>
                 <li class="contact_item">
-                    <strong>Phone</strong>: (555) 555-5555
+                    <strong>Phone</strong>: {{ location.phone }}
                 </li>
                 <li class="contact_item">
-                    <strong>Email</strong>: citybakery@example.comm
+                    <strong>Email</strong>: {{ location.email }}
                 </li>
             </ul>
             <div class="map_wrap">
-                <iframe class="display-img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29900.272849736673!2d-122.8521813986169!3d49.239514207047016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486785f1605fd09%3A0xc000df635b32c14b!2sComo%20Lake%20Park!5e0!3m2!1sen!2sca!4v1694471419013!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <img src="{{ location.image.url }}" alt="bakery location" class="display-img" />
+{#                <iframe class="display-img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29900.272849736673!2d-122.8521813986169!3d49.239514207047016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486785f1605fd09%3A0xc000df635b32c14b!2sComo%20Lake%20Park!5e0!3m2!1sen!2sca!4v1694471419013!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>#}
             </div>
         </section>
         <section>

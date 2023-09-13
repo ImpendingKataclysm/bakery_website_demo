@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 CHRFIELD_LEN = 200
 TXTFIELD_LEN = 2000
+MAX_NUM = 10
 
 PRODUCT_TYPE = (
     ("bread", "Bread"),
@@ -39,7 +40,7 @@ class Applicant(models.Model):
     first_name = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
     last_name = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
     email = models.EmailField()
-    phone = models.CharField(max_length=10, null=True, blank=True)
+    phone = models.CharField(max_length=MAX_NUM, null=True, blank=True)
     date_available = models.DateField()
     resume = models.FileField(upload_to='resumes')
     date_applied = models.DateTimeField(auto_now_add=True)
@@ -68,3 +69,26 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f'{self.name}'
+
+
+class Location(models.Model):
+    """
+    Defines a DB entry for the bakery's location. Contains the following fields:
+    - street_address
+    - city
+    - postal
+    - province
+    - phone
+    - email
+    - image
+    """
+    street_address = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
+    city = models.CharField(max_length=CHRFIELD_LEN, blank=True, null=True)
+    postal = models.CharField(max_length=6)
+    province = models.CharField(max_length=CHRFIELD_LEN)
+    phone = models.CharField(max_length=MAX_NUM)
+    email = models.EmailField(blank=True, null=True)
+    image = models.ImageField(upload_to='project1', blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.street_address} {self.city}, {self.province}'

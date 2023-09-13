@@ -206,7 +206,7 @@ figure {
     margin: 1rem 0;
 }
 
-.map_wrap iframe {
+.map_wrap .display-img {
     max-width: 100%;
     margin: auto;
 }
