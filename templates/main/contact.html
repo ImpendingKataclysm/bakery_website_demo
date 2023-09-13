@@ -36,7 +36,11 @@
         <aside class="comments card">
             <h3>We Want To Hear From You</h3>
             <p>Please leave any questions or comments below.</p>
-            <form method="POST" action="{% url 'main_site:contact' %}" class="input_form">
+            <form
+                    method="POST"
+                    action="{% url 'main_site:contact' %}"
+                    class="input_form"
+            >
                 {% csrf_token %}
                 <div class="input_wrap">
                     <label for="name">Name</label>

@@ -3,6 +3,17 @@ from . import models
 
 
 class ApplicantForm(forms.ModelForm):
+    """
+    Defines the job application form. Contains the following fields:
+    - first_name (CharField)
+    - last_name (CharField)
+    - email (EmailField
+    - phone (CharField)
+    - date_available (DateField)
+    - resume (FileField)
+    Applicant data is stored in the database and uploaded resumes are stored in
+    mediafiles/resumes.
+    """
     first_name = forms.CharField(
         max_length=models.CHRFIELD_LEN,
         required=True,
