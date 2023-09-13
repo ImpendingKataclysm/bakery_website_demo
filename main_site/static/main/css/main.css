@@ -203,12 +203,8 @@ figure {
 
 /* Links */
 
-.text_link {
+.text_link, .text_link:visited {
     color: var(--primaryAccent);
-}
-
-.text_link:visited {
-    color: #fff;
 }
 
 .text_link:hover {
@@ -251,9 +247,6 @@ input {
     font-weight: bold;
     font-size: 1.1rem;
     text-align: 0.2rem 0.2rem 0.7rem var(--shadow);
-}
-
-input {
     margin-bottom: 0.2rem;
 }
 
@@ -292,13 +285,11 @@ input:focus {
                 inset 5px 5px 7px var(--primaryAccent);
 }
 
-/* Home Page */
+/* Page-Specific styles */
 
 .seasonal_item {
     background: linear-gradient(to bottom, rgb(198, 108, 130), rgb(202, 130, 145));
 }
-
-/* Products Page */
 
 .product_heading, .product_description {
     text-align: center;
@@ -327,7 +318,7 @@ input:focus {
         padding: 0.5rem 0;
     }
 
-    .nav_btn {
+    .nav_btn, .icon_credit {
         display: none;
     }
 
@@ -342,10 +333,6 @@ input:focus {
 
     .site_map {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .icon_credit {
-        display: none;
     }
 
     .card {
