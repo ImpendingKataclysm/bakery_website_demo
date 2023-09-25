@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block title %}Contact{% endblock %}
 
@@ -15,7 +16,7 @@
                     <strong>Address</strong>: {{ location.street_address }} {{ location.city }}, {{ location.province }}
                 </li>
                 <li class="contact_item">
-                    <strong>Phone</strong>: {{ location.phone }}
+                    <strong>Phone</strong>: {{ location.phone|format_phone_number }}
                 </li>
                 <li class="contact_item">
                     <strong>Email</strong>: {{ location.email }}
